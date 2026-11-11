@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body">
+    <h1 class="display-1 text-center">Django Tasks</h1>
+    <p class="mt-4">Django Tasks makes it easy to stay organized: create tasks, update their details, and mark them complete when you are done. Sign in to manage your list and keep your daily activities under control.</p>
+    {% if user.is_authenticated %}
+    <hr>
+    <div>
+        <a class="btn btn-primary" href="/tasks/">
+            View Tasks
+        </a>
+    </div>
+    {% else %}
+    <hr>
+    <div>
+        <a class="btn btn-success" href="/login/">
+        Login
+        </a>
+        <a class="btn btn-danger" href="/signup/">
+        Signup
+        </a>
+    </div>
+    {% endif %}
+</section>
+</main>
+
+{% endblock %}
